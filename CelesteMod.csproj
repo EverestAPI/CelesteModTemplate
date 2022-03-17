@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net452</TargetFramework>
+        <AssemblyName>CelesteMod</AssemblyName>
+        <RootNamespace>Celeste.Mod.CelesteMod</RootNamespace>
+        <LangVersion>latest</LangVersion>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\Celeste.exe')">..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
+        <CelesteType Condition="'$(CelesteType)' == '' And Exists('$(CelestePrefix)\BuildIsXNA.txt')">XNA</CelesteType>
+        <CelesteType Condition="'$(CelesteType)' == ''">FNA</CelesteType>
+        <XNAPath Condition="'$(XNAPath)' == ''">$(WINDIR)\Microsoft.NET\assembly\GAC_32\{0}\v4.0_4.0.0.0__842cf8be1de50553\{0}.dll</XNAPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MonoMod.RuntimeDetour" Version="21.01.11.01" PrivateAssets="all" ExcludeAssets="runtime" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="$(CelestePrefix)\Celeste.exe">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="$(CelestePrefix)\MMHOOK_Celeste.dll">
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
+    <Choose>
+        <When Condition="'$(CelesteType)' == 'FNA'">
+            <ItemGroup>
+                <Reference Include="$(CelestePrefix)\FNA.dll">
+                    <Private>false</Private>
+                </Reference>
+            </ItemGroup>
+        </When>
+
+        <When Condition="'$(CelesteType)' == 'XNA'">
+            <ItemGroup>
+                <Reference Include="$([System.String]::Format('$(XNAPath)', 'Microsoft.Xna.Framework'))">
+                    <Private>false</Private>
+                </Reference>
+                <Reference Include="$([System.String]::Format('$(XNAPath)', 'Microsoft.Xna.Framework.Game'))">
+                    <Private>false</Private>
+                </Reference>
+                <Reference Include="$([System.String]::Format('$(XNAPath)', 'Microsoft.Xna.Framework.Graphics'))">
+                    <Private>false</Private>
+                </Reference>
+            </ItemGroup>
+        </When>
+    </Choose>
+
+    <Target Name="CopyFiles" AfterTargets="Build">
+        <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="bin" />
+    </Target>
+
+</Project>

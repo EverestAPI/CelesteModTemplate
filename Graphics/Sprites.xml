@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Sprites>
+    <sampleEntity path="objects/CelesteMod/sampleEntity/" start="idle">
+        <Justify x="0.5" y="0.5" />
+        <Anim id="idle" path="idle" delay="0.1" frames="0" />
+    </sampleEntity>
+</Sprites>

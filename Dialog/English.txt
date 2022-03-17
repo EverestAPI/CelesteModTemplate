@@ -1,0 +1,1 @@
+SAMPLE_DIALOG_TEXT= Some sample text for your mod.
