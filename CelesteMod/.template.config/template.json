@@ -41,6 +41,11 @@
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "true"
+    },
+    "GitHub": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
     }
   },
   "sources": [
@@ -61,6 +66,12 @@
             "Graphics/**/*",
             "Loenn/**/*",
             "Triggers/**/*"
+          ]
+        },
+        {
+          "condition": "(!GitHub)",
+          "exclude": [
+            ".github/**/*"
           ]
         },
         {
