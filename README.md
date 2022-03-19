@@ -1,7 +1,7 @@
 # CelesteMod.Templates
 Templates for Celeste code mods!
 
-https://www.nuget.org/packages/CelesteMod.Templates
+[![NuGet](https://img.shields.io/nuget/v/CelesteMod.Templates)](https://www.nuget.org/packages/CelesteMod.Templates/)
 
 Installation:
 
@@ -24,3 +24,4 @@ Available parameters:
 * `--Settings` : Includes a blank `EverestModuleSettings` class and configures the module to look for it. (Defaults to true)
 * `--Session` : Includes a blank `EverestModuleSession` class and configures the module to look for it. (Defaults to true)
 * `--Logging` : Sets logging level to `Info` specifically for release builds instead of the default `Verbose`. (Defaults to true)
+* `--GitHub` : Generates a GitHub action for building your mod. (Defaults to false)
