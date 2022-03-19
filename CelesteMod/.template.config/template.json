@@ -10,5 +10,78 @@
     "type": "project"
   },
   "sourceName": "CelesteMod",
-  "preferNameDirectory": true
+  "preferNameDirectory": true,
+  "symbols": {
+    "Samples": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
+    },
+    "Exports": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
+    },
+    "Hooks": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
+    },
+    "Settings": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "Session": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "Logging": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    }
+  },
+  "sources": [
+    {
+      "exclude": [
+        ".idea/**/*",
+        ".template.config/**/*",
+        "bin/**/*",
+        "obj/**/*"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!Samples)",
+          "exclude": [
+            "Ahorn/**/*",
+            "Dialog/**/*",
+            "Entities/**/*",
+            "Graphics/**/*",
+            "Loenn/**/*",
+            "Triggers/**/*"
+          ]
+        },
+        {
+          "condition": "(!Exports)",
+          "exclude": [
+            "CelesteModExports.cs"
+          ]
+        },
+        {
+          "condition": "(!Session)",
+          "exclude": [
+            "CelesteModModuleSession.cs"
+          ]
+        },
+        {
+          "condition": "(!Settings)",
+          "exclude": [
+            "CelesteModModuleSettings.cs"
+          ]
+        }
+      ]
+    }
+  ]
 }

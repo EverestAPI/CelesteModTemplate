@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageType>Template</PackageType>
+        <PackageVersion>1.0.1</PackageVersion>
         <PackageId>CelesteMod.Templates</PackageId>
         <Title>Celeste Mod templates</Title>
         <Authors>Shane Woolcock</Authors>

@@ -1,19 +1,26 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+#if Exports
 using MonoMod.ModInterop;
+#endif
 
 namespace Celeste.Mod.CelesteMod {
     public class CelesteModModule : EverestModule {
         public static CelesteModModule Instance { get; private set; }
 
+#if Settings
         public override Type SettingsType => typeof(CelesteModModuleSettings);
         public static CelesteModModuleSettings Settings => (CelesteModModuleSettings) Instance._Settings;
 
+#endif
+#if Session
         public override Type SessionType => typeof(CelesteModModuleSession);
         public static CelesteModModuleSession Session => (CelesteModModuleSession) Instance._Session;
 
+#endif
         public CelesteModModule() {
             Instance = this;
+#if ReducedLogging
 //-:cnd:noEmit
 #if DEBUG
             // debug builds use verbose logging
@@ -23,23 +30,31 @@ namespace Celeste.Mod.CelesteMod {
             Logger.SetLogLevel(nameof(CelesteModModule), LogLevel.Info);
 #endif
 //+:cnd:noEmit
+#endif
         }
 
         public override void Load() {
+#if Exports
             typeof(CelesteModExports).ModInterop(); // TODO: delete this line if you do not need to export any functions
 
+#endif
+#if HookHelpers
             On.Celeste.LevelLoader.ctor += LevelLoader_ctor;
             On.Celeste.OverworldLoader.ctor += OverworldLoader_ctor;
 
+#endif
             // TODO: apply any hooks that should always be active
         }
 
         public override void Unload() {
+#if HookHelpers
             On.Celeste.LevelLoader.ctor -= LevelLoader_ctor;
             On.Celeste.OverworldLoader.ctor -= OverworldLoader_ctor;
 
+#endif
             // TODO: unapply any hooks applied in Load()
         }
+#if HookHelpers
 
         public void LoadBeforeLevel() {
             On.Celeste.Mod.AssetReloadHelper.ReloadLevel += AssetReloadHelper_ReloadLevel;
@@ -70,5 +85,6 @@ namespace Celeste.Mod.CelesteMod {
             orig(self, session, startposition);
             LoadBeforeLevel();
         }
+#endif
     }
 }
