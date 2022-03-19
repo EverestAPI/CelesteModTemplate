@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageType>Template</PackageType>
+        <PackageId>CelesteMod.Templates</PackageId>
+        <Title>Celeste Mod templates</Title>
+        <Authors>Shane Woolcock</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/swoolcock/CelesteModTemplate/blob/master/CelesteMod</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/swoolcock/CelesteModTemplate</RepositoryUrl>
+        <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
+        <Copyright>Copyright (c) 2022 Shane Woolcock</Copyright>
+        <Description>Templates to use when creating a Celeste Mod.</Description>
+        <PackageTags>dotnet-new;templates;celeste;mod;game</PackageTags>
+        <TargetFramework>net452</TargetFramework>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="icon.png" Pack="true" PackagePath="\" />
+        <Content Include="CelesteMod\**\*" Exclude="CelesteMod\**\bin\**;CelesteMod\**\obj\**" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+</Project>

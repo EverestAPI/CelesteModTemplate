@@ -6,6 +6,7 @@
         <RootNamespace>Celeste.Mod.CelesteMod</RootNamespace>
         <LangVersion>latest</LangVersion>
         <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\Celeste.exe')">..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\..\Celeste.exe')">..\..\..</CelestePrefix>
         <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
         <CelesteType Condition="'$(CelesteType)' == '' And Exists('$(CelestePrefix)\BuildIsXNA.txt')">XNA</CelesteType>
         <CelesteType Condition="'$(CelesteType)' == ''">FNA</CelesteType>

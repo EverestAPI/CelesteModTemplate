@@ -1,2 +1,2 @@
-# CelesteMod
-Replace with your mod's readme!
+# CelesteMod.Templates
+Templates for Celeste code mods!
