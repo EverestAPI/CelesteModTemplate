@@ -3,6 +3,13 @@ Templates for Celeste code mods!
 
 [![NuGet](https://img.shields.io/nuget/v/CelesteMod.Templates)](https://www.nuget.org/packages/CelesteMod.Templates/)
 
+Prerequisites:
+
+* Celeste
+* [Everest](https://everestapi.github.io)
+* [.NET SDK](https://dotnet.microsoft.com/en-us/download)
+* A C# IDE (Visual Studio, Rider, Nano, etc.)
+
 Installation:
 
 `dotnet new --install CelesteMod.Templates`
