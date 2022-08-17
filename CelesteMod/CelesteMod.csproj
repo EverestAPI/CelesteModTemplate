@@ -59,5 +59,9 @@
     <Target Name="CopyFiles" AfterTargets="Build">
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="bin" />
     </Target>
+    
+    <PropertyGroup>
+        <PathMap>$(MSBuildProjectDirectory)=CelesteMod/</PathMap>
+    </PropertyGroup>
 
 </Project>
