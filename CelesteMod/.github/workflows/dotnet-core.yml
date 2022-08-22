@@ -12,12 +12,29 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Parse Everest Dependency
+      run: echo "EVERESTDEP=$(yq eval '.[0].Dependencies[] | select(.Name == "Everest").Version' -- everest.yaml)"
+
+    - name: Download Everest stripped lib
+      uses: robinraju/release-downloader@v1.4
+      with:
+        repository: EverestAPI/Everest
+        latest: true
+        fileName: lib-stripped.zip
+
+    - name: Extract lib-stripped.zip
+      run: unzip lib-stripped.zip
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build CelesteMod.csproj --configuration Release --no-restore
+      env:
+        CELESTEPREFIX: ${{ github.workspace }}/lib-stripped
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
