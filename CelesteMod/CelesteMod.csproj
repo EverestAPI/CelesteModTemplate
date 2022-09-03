@@ -63,5 +63,9 @@
     <PropertyGroup>
         <PathMap>$(MSBuildProjectDirectory)=CelesteMod/</PathMap>
     </PropertyGroup>
+    
+    <PropertyGroup>
+        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    </PropertyGroup>
 
 </Project>
