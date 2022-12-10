@@ -20,7 +20,7 @@ namespace Celeste.Mod.CelesteMod {
 #endif
         public CelesteModModule() {
             Instance = this;
-#if ReducedLogging
+#if Logging
 //-:cnd:noEmit
 #if DEBUG
             // debug builds use verbose logging
@@ -38,7 +38,7 @@ namespace Celeste.Mod.CelesteMod {
             typeof(CelesteModExports).ModInterop(); // TODO: delete this line if you do not need to export any functions
 
 #endif
-#if HookHelpers
+#if Hooks
             On.Celeste.LevelLoader.ctor += LevelLoader_ctor;
             On.Celeste.OverworldLoader.ctor += OverworldLoader_ctor;
 
@@ -47,14 +47,14 @@ namespace Celeste.Mod.CelesteMod {
         }
 
         public override void Unload() {
-#if HookHelpers
+#if Hooks
             On.Celeste.LevelLoader.ctor -= LevelLoader_ctor;
             On.Celeste.OverworldLoader.ctor -= OverworldLoader_ctor;
 
 #endif
             // TODO: unapply any hooks applied in Load()
         }
-#if HookHelpers
+#if Hooks
 
         public void LoadBeforeLevel() {
             On.Celeste.Mod.AssetReloadHelper.ReloadLevel += AssetReloadHelper_ReloadLevel;

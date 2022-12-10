@@ -8,7 +8,7 @@ Prerequisites:
 * Celeste
 * [Everest](https://everestapi.github.io)
 * [.NET SDK](https://dotnet.microsoft.com/en-us/download)
-* A C# IDE (Visual Studio, Rider, Nano, etc.)
+* A C# IDE (Visual Studio, Rider, Code, Nano, etc.)
 
 Installation:
 
