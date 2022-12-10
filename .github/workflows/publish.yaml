@@ -10,11 +10,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
       - name: Fetch all tags
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Get current tag
         run: echo "CURRENT_TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=1))" >> $GITHUB_ENV
       - name: Build
         run: dotnet pack CelesteMod.Templates.csproj --configuration Release -p:version=${{env.CURRENT_TAG}} --no-restore
-      - name: Publish
-        run: nuget push bin/Release/CelesteMod.Templates.${{env.CURRENT_TAG}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+#      - name: Publish
+#        run: nuget push bin/Release/CelesteMod.Templates.${{env.CURRENT_TAG}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
