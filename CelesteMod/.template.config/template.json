@@ -46,6 +46,11 @@
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "false"
+    },
+    "Core": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
     }
   },
   "sources": [
@@ -54,7 +59,9 @@
         ".idea/**/*",
         ".template.config/**/*",
         "bin/**/*",
-        "obj/**/*"
+        "obj/**/*",
+        "everest-core.yaml",
+        "CelesteMod-core.csproj"
       ],
       "modifiers": [
         {
@@ -91,6 +98,21 @@
           "exclude": [
             "CelesteModModuleSettings.cs"
           ]
+        },
+        {
+          "condition": "(Core)",
+          "include": [
+            "everest-core.yaml",
+            "CelesteMod-core.csproj"
+          ],
+          "exclude": [
+            "everest.yaml",
+            "CelesteMod.csproj"
+          ],
+          "rename": {
+            "everest-core.yaml": "everest.yaml",
+            "CelesteMod-core.csproj": "CelesteMod.csproj"
+          }
         }
       ]
     }
