@@ -14,9 +14,8 @@
 
         <!-- Use the legacy reference dir for Core installs -->
         <CelesteIsCore>false</CelesteIsCore>
-        <CelesteIsCore Condition="Exists('$(CelestePrefix)\Celeste.dll') And Exists('$(CelestePrefix)\legacyRef')">true</CelesteIsCore>
+        <CelesteIsCore Condition="Exists('$(CelestePrefix)\Celeste.dll')">true</CelesteIsCore>
         <CelestePrefix Condition="$(CelesteIsCore)">$(CelestePrefix)\legacyRef</CelestePrefix>
-        <CelesteType Condition="$(CelesteIsCore)">FNA</CelesteType>
     </PropertyGroup>
 
     <Target Name="CheckCoreInstall" BeforeTargets="PrepareForBuild" Condition="$(CelesteIsCore)">
