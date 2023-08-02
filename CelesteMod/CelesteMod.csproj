@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <Target Name="CheckCoreInstall" BeforeTargets="PrepareForBuild" Condition="$(CelesteIsCore)">
-        <Error Condition="!Exists('$(CelestePrefix)')" Text="Detected a .NET Core Everest install without the required legacyRef install needed to build .NET Framework mods - see the Everest wiki (https://github.com/EverestAPI/Resources/wiki) for info on how to set it up" />
+        <Error Condition="!Exists('$(CelestePrefix)')" Text="Detected a .NET Core Everest install without the required legacyRef install needed to build .NET Framework mods - see the Everest wiki (https://github.com/EverestAPI/Resources/wiki/Code-Mod-Core-Migration-Guide) for info on how to set it up" />
         <Message Text="Building against .NET Core Everest legacyRef install" Importance="high" />
     </Target>
 
