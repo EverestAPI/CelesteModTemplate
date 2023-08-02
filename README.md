@@ -32,3 +32,4 @@ Available parameters:
 * `--Session` : Includes a blank `EverestModuleSession` class and configures the module to look for it. (Defaults to true)
 * `--Logging` : Sets logging level to `Info` specifically for release builds instead of the default `Verbose`. (Defaults to true)
 * `--GitHub` : Generates a GitHub action for building your mod. (Defaults to false)
+* `--Core` : Generates a .NET Core mod - this requires .NET Core Everest (**breaking compatility with regular stable/beta/dev Everest versions as of now**), but offers access to .NET 7.0 features. (Defaults to false)

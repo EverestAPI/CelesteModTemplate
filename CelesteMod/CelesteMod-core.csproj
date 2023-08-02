@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <AssemblyName>CelesteMod</AssemblyName>
+        <RootNamespace>Celeste.Mod.CelesteMod</RootNamespace>
+        <LangVersion>latest</LangVersion>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\Celeste.dll')">..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\..\Celeste.dll')">..\..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
+    </PropertyGroup>
+
+    <!--Disable "Copy Local" for all references-->
+    <ItemDefinitionGroup>
+        <PackageReference PrivateAssets="all" ExcludeAssets="runtime" />
+        <Reference Private="false" />
+    </ItemDefinitionGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MonoMod.RuntimeDetour" Version="22.01.04.03" PrivateAssets="all" ExcludeAssets="runtime" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="$(CelestePrefix)\Celeste.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="$(CelestePrefix)\MMHOOK_Celeste.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="$(CelestePrefix)\FNA.dll">
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+
+    <Target Name="CopyFiles" AfterTargets="Build">
+        <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="bin" />
+        <Copy SourceFiles="$(OutputPath)\$(AssemblyName).pdb" DestinationFolder="bin" />
+    </Target>
+    
+    <PropertyGroup>
+        <PathMap>$(MSBuildProjectDirectory)=CelesteMod/</PathMap>
+    </PropertyGroup>
+
+</Project>

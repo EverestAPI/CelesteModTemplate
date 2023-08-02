@@ -11,7 +11,7 @@
         <Copyright>Copyright (c) 2022 Shane Woolcock</Copyright>
         <Description>Templates to use when creating a Celeste Mod.</Description>
         <PackageTags>dotnet-new;templates;celeste;mod;game</PackageTags>
-        <TargetFramework>net452</TargetFramework>
+        <TargetFrameworks>net452;net7.0</TargetFrameworks>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
