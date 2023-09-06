@@ -5,8 +5,8 @@
         <AssemblyName>CelesteMod</AssemblyName>
         <RootNamespace>Celeste.Mod.CelesteMod</RootNamespace>
         <LangVersion>latest</LangVersion>
-        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\Celeste.exe')">..\..</CelestePrefix>
-        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\..\Celeste.exe')">..\..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And (Exists('..\..\Celeste.exe') Or Exists('..\..\Celeste.dll'))">..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And (Exists('..\..\..\Celeste.exe') Or Exists('..\..\..\Celeste.dll'))">..\..\..</CelestePrefix>
         <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
 
         <!-- Use the legacy reference dir for Core installs -->
