@@ -37,6 +37,11 @@
       "datatype": "bool",
       "defaultValue": "true"
     },
+    "SaveData": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
     "Logging": {
       "type": "parameter",
       "datatype": "bool",
@@ -102,6 +107,12 @@
           "condition": "(!Settings)",
           "exclude": [
             "CelesteModModuleSettings.cs"
+          ]
+        },
+        {
+          "condition": "(!SaveData)",
+          "exclude": [
+            "CelesteModModuleSaveData.cs"
           ]
         },
         {

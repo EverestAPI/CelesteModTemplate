@@ -18,6 +18,11 @@ namespace Celeste.Mod.CelesteMod {
         public static CelesteModModuleSession Session => (CelesteModModuleSession) Instance._Session;
 
 #endif
+#if SaveData
+        public override Type SaveDataType => typeof(CelesteModModuleSaveData);
+        public static CelesteModModuleSaveData SaveData => (CelesteModModuleSaveData) Instance._SaveData;
+
+#endif
         public CelesteModModule() {
             Instance = this;
 #if Logging
