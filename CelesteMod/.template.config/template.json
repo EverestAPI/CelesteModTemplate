@@ -51,6 +51,11 @@
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "false"
+    },
+    "Legacy": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
     }
   },
   "sources": [
@@ -100,7 +105,7 @@
           ]
         },
         {
-          "condition": "(Core)",
+          "condition": "(!Legacy)",
           "include": [
             "everest-core.yaml",
             "CelesteMod-core.csproj"
