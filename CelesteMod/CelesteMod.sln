@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteMod", "CelesteMod.csproj", "{472281A7-9373-412A-8E8E-5B603857A9D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteMod", "Source\CelesteMod.csproj", "{472281A7-9373-412A-8E8E-5B603857A9D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
