@@ -2,5 +2,5 @@
   Version: 0.1.0
   DLL: bin/CelesteMod.dll
   Dependencies:
-    - Name: Everest
+    - Name: EverestCore
       Version: 1.4465.0
