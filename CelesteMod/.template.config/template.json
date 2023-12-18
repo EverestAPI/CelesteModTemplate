@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Shane Woolcock",
+  "author": "EverestAPI",
   "classifications": [ "Celeste", "Mod", "Console" ],
   "identity": "CelesteMod.CSharp",
   "name": "Sample project for Celeste modding",
