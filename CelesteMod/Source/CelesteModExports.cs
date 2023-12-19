@@ -1,4 +1,5 @@
 using MonoMod.ModInterop;
+
 namespace Celeste.Mod.CelesteMod {
     /// <summary>
     /// Provides export functions for other mods to import.

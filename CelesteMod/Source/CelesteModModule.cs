@@ -62,33 +62,11 @@ namespace Celeste.Mod.CelesteMod {
 #if Hooks
 
         public void LoadBeforeLevel() {
-#if Core
-            Everest.Events.AssetReload.OnAfterReload += AssetReload_OnAfterReload;
-#else
-            On.Celeste.Mod.AssetReloadHelper.ReloadLevel += AssetReloadHelper_ReloadLevel;
-#endif
-
             // TODO: apply any hooks that should only be active while a level is loaded
         }
 
         public void UnloadAfterLevel() {
-#if Core
-            Everest.Events.AssetReload.OnAfterReload -= AssetReload_OnAfterReload;
-#else
-            On.Celeste.Mod.AssetReloadHelper.ReloadLevel -= AssetReloadHelper_ReloadLevel;
-#endif
-
             // TODO: unapply any hooks applied in LoadBeforeLevel()
-        }
-
-#if Core
-        private void AssetReload_OnAfterReload(bool silent) {
-#else
-        private void AssetReloadHelper_ReloadLevel(On.Celeste.Mod.AssetReloadHelper.orig_ReloadLevel orig) {
-            orig();
-
-#endif
-            // TODO: anything that should happen after assets are reloaded with F5
         }
 
         private void OverworldLoader_ctor(On.Celeste.OverworldLoader.orig_ctor orig, OverworldLoader self, Overworld.StartMode startmode, HiresSnow snow) {
