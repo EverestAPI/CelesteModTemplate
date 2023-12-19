@@ -119,15 +119,15 @@
           "condition": "(!Legacy)",
           "include": [
             "everest-core.yaml",
-            "CelesteMod-core.csproj"
+            "Source/CelesteMod-core.csproj"
           ],
           "exclude": [
             "everest.yaml",
-            "CelesteMod.csproj"
+            "Source/CelesteMod.csproj"
           ],
           "rename": {
             "everest-core.yaml": "everest.yaml",
-            "CelesteMod-core.csproj": "CelesteMod.csproj"
+            "Source/CelesteMod-core.csproj": "Source/CelesteMod.csproj"
           }
         }
       ]
