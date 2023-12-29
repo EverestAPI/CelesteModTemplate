@@ -39,6 +39,7 @@ jobs:
         path: |
           everest.yaml
           bin/CelesteMod.dll
+          bin/CelesteMod.pdb
 #if Samples
           Ahorn/**/*
           Audio/**/*
