@@ -43,43 +43,11 @@ namespace Celeste.Mod.CelesteMod {
             typeof(CelesteModExports).ModInterop(); // TODO: delete this line if you do not need to export any functions
 
 #endif
-#if Hooks
-            On.Celeste.LevelLoader.ctor += LevelLoader_ctor;
-            On.Celeste.OverworldLoader.ctor += OverworldLoader_ctor;
-
-#endif
             // TODO: apply any hooks that should always be active
         }
 
         public override void Unload() {
-#if Hooks
-            On.Celeste.LevelLoader.ctor -= LevelLoader_ctor;
-            On.Celeste.OverworldLoader.ctor -= OverworldLoader_ctor;
-
-#endif
             // TODO: unapply any hooks applied in Load()
         }
-#if Hooks
-
-        public void LoadBeforeLevel() {
-            // TODO: apply any hooks that should only be active while a level is loaded
-        }
-
-        public void UnloadAfterLevel() {
-            // TODO: unapply any hooks applied in LoadBeforeLevel()
-        }
-
-        private void OverworldLoader_ctor(On.Celeste.OverworldLoader.orig_ctor orig, OverworldLoader self, Overworld.StartMode startmode, HiresSnow snow) {
-            orig(self, startmode, snow);
-            if (startmode != (Overworld.StartMode) (-1)) {
-                UnloadAfterLevel();
-            }
-        }
-
-        private void LevelLoader_ctor(On.Celeste.LevelLoader.orig_ctor orig, LevelLoader self, Session session, Vector2? startposition) {
-            orig(self, session, startposition);
-            LoadBeforeLevel();
-        }
-#endif
     }
 }

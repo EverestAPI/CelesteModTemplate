@@ -22,11 +22,6 @@
       "datatype": "bool",
       "defaultValue": "false"
     },
-    "Hooks": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false"
-    },
     "Settings": {
       "type": "parameter",
       "datatype": "bool",
