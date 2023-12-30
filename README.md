@@ -29,7 +29,6 @@ This will create a solution for your mod and a series of classes in the namespac
 Available parameters:
 * `--Samples`: Creates a set of sample entities and triggers, including Ahorn and Lönn plugins. (Defaults to false)
 * `--Exports`: Includes a static class for use with `MonoMod.ModInterop`. (Defaults to false)
-* `--Hooks` : Generates a series of helper methods for loading and unloading hooks on level load rather than just on mod load. (Defaults to false)
 * `--Settings` : Includes a blank `EverestModuleSettings` class and configures the module to look for it. (Defaults to true)
 * `--Session` : Includes a blank `EverestModuleSession` class and configures the module to look for it. (Defaults to true)
 * `--SaveData` : Includes a blank `EverestModuleSaveData` class and configures the module to look for it. (Defaults to true)
