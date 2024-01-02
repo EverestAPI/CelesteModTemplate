@@ -18,6 +18,7 @@
     <ItemGroup>
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
         <PackageReference Include="MonoMod.RuntimeDetour" Version="25.0.2" PrivateAssets="all" ExcludeAssets="runtime" />
+        <PackageReference Include="MonoMod.Patcher" Version="25.0.0-prerelease.2" />
     </ItemGroup>
 
     <ItemGroup>
