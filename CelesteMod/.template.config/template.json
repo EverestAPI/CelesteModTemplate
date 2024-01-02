@@ -74,10 +74,10 @@
           "exclude": [
             "Ahorn/**/*",
             "Dialog/**/*",
-            "Entities/**/*",
             "Graphics/**/*",
             "Loenn/**/*",
-            "Triggers/**/*"
+            "Source/Entities/**/*",
+            "Source/Triggers/**/*"
           ]
         },
         {
@@ -89,25 +89,25 @@
         {
           "condition": "(!Exports)",
           "exclude": [
-            "CelesteModExports.cs"
+            "Source/CelesteModExports.cs"
           ]
         },
         {
           "condition": "(!Session)",
           "exclude": [
-            "CelesteModModuleSession.cs"
+            "Source/CelesteModModuleSession.cs"
           ]
         },
         {
           "condition": "(!Settings)",
           "exclude": [
-            "CelesteModModuleSettings.cs"
+            "Source/CelesteModModuleSettings.cs"
           ]
         },
         {
           "condition": "(!SaveData)",
           "exclude": [
-            "CelesteModModuleSaveData.cs"
+            "Source/CelesteModModuleSaveData.cs"
           ]
         },
         {
