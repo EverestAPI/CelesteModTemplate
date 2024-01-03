@@ -3,12 +3,12 @@
         <PackageType>Template</PackageType>
         <PackageId>CelesteMod.Templates</PackageId>
         <Title>Celeste Mod templates</Title>
-        <Authors>Shane Woolcock</Authors>
+        <Authors>EverestAPI</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/swoolcock/CelesteModTemplate/blob/master/CelesteMod</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/swoolcock/CelesteModTemplate</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/EverestAPI/CelesteModTemplate/blob/master/CelesteMod</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/EverestAPI/CelesteModTemplate</RepositoryUrl>
         <PackageReleaseNotes>Automated release.</PackageReleaseNotes>
-        <Copyright>Copyright (c) 2022 Shane Woolcock</Copyright>
+        <Copyright>Copyright (c) 2022 EverestAPI</Copyright>
         <Description>Templates to use when creating a Celeste Mod.</Description>
         <PackageTags>dotnet-new;templates;celeste;mod;game</PackageTags>
         <TargetFrameworks>net452;net7.0</TargetFrameworks>
