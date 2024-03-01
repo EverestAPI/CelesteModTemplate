@@ -38,12 +38,13 @@
 
     <Target Name="PackageMod" AfterTargets="CopyFiles" Condition="'$(Configuration)' == 'Release'">
         <ItemGroup>
-            <FilesToPackage Include="..\Ahorn\**\*.*" />
-            <FilesToPackage Include="..\Loenn\**\*.*" />
+            <FilesToPackage Include="..\everest.yaml" />
+            <FilesToPackage Include="..\bin\**\*.*" />
+            <FilesToPackage Include="..\Audio\**\*.*" />
             <FilesToPackage Include="..\Dialog\**\*.*" />
             <FilesToPackage Include="..\Graphics\**\*.*" />
-            <FilesToPackage Include="..\bin\**\*.*" />
-            <FilesToPackage Include="..\everest.yaml" />
+            <FilesToPackage Include="..\Ahorn\**\*.*" />
+            <FilesToPackage Include="..\Loenn\**\*.*" />
         </ItemGroup>
         <PackageMod Files="@(FilesToPackage)" OutputPath="..\CelesteMod.zip" />
     </Target>
