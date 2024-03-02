@@ -18,9 +18,7 @@
     <ItemGroup>
         <PackageReference Include="MonoMod.RuntimeDetour" Version="25.0.2" PrivateAssets="all" ExcludeAssets="runtime" />
         <PackageReference Include="MonoMod.Patcher" Version="25.0.0-prerelease.2" />
-<!--/-:replacements:noEmit -->        
         <PackageReference Include="CelesteAnalyzer" Version="1.0.3.1" />
-<!--/+:replacements:noEmit -->
     </ItemGroup>
 
     <ItemGroup>
@@ -84,8 +82,8 @@
     
                 string GetRelativePath(string fromPath, string toPath)
                 {
-                    if (string.IsNullOrEmpty(fromPath)) throw new ArgumentNullException("fromPath");
-                    if (string.IsNullOrEmpty(toPath))   throw new ArgumentNullException("toPath");
+                    if (string.IsNullOrEmpty(fromPath)) throw new ArgumentNullException(nameof(fromPath));
+                    if (string.IsNullOrEmpty(toPath))   throw new ArgumentNullException(nameof(toPath));
                 
                     Uri fromUri = new Uri(fromPath);
                     Uri toUri = new Uri(toPath);
