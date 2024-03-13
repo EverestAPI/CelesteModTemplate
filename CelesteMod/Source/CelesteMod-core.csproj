@@ -64,7 +64,7 @@
             <Using Namespace="System.IO.Compression" />
             <Code Type="Fragment" Language="cs">
             <![CDATA[
-                var projectDir = Path.Combine("$(ProjectDir)", ".."); // Go one level up, since we're inside the 'Source' directory
+                var projectDir = Path.Combine(@"$(ProjectDir)", ".."); // Go one level up, since we're inside the 'Source' directory
             
                 if (File.Exists(OutputPath))
                     File.Delete(OutputPath);
