@@ -7,6 +7,7 @@
         <LangVersion>latest</LangVersion>
         <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\..\Celeste.dll')">..\..\..</CelestePrefix>
         <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
+        <ZippedFiles>..\everest.yaml;..\bin\**\*.*;..\Audio\**\*.*;..\Audio\**\*.*;..\Dialog\**\*.*;..\Graphics\**\*.*;..\Ahorn\**\*.*;..\Loenn\**\*.*</ZippedFiles>
     </PropertyGroup>
 
     <!--Disable "Copy Local" for all references-->
@@ -29,20 +30,14 @@
         <Reference Include="$(CelestePrefix)\FNA.dll" Private="false" />
     </ItemGroup>
 
-    <Target Name="CopyFiles" AfterTargets="Build">
+    <Target Name="CopyFiles" AfterTargets="Build" Inputs="$(OutputPath)\$(AssemblyName).dll;$(OutputPath)\$(AssemblyName).pdb" Outputs="..\bin\$(AssemblyName).dll;..\bin\$(AssemblyName).pdb">
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).dll" DestinationFolder="..\bin" />
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).pdb" DestinationFolder="..\bin" />
     </Target>
 
-    <Target Name="PackageMod" AfterTargets="CopyFiles" Condition="'$(Configuration)' == 'Release'">
+    <Target Name="PackageMod" AfterTargets="CopyFiles" Inputs="$(ZippedFiles)" Outputs="..\CelesteMod.zip" Condition="'$(Configuration)' == 'Release'">
         <ItemGroup>
-            <FilesToPackage Include="..\everest.yaml" />
-            <FilesToPackage Include="..\bin\**\*.*" />
-            <FilesToPackage Include="..\Audio\**\*.*" />
-            <FilesToPackage Include="..\Dialog\**\*.*" />
-            <FilesToPackage Include="..\Graphics\**\*.*" />
-            <FilesToPackage Include="..\Ahorn\**\*.*" />
-            <FilesToPackage Include="..\Loenn\**\*.*" />
+            <FilesToPackage Include="$(ZippedFiles)" />
         </ItemGroup>
         <PackageMod Files="@(FilesToPackage)" OutputPath="..\CelesteMod.zip" />
     </Target>
