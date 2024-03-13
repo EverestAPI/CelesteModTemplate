@@ -4,9 +4,10 @@ using Microsoft.Xna.Framework;
 using MonoMod.ModInterop;
 #endif
 
-namespace Celeste.Mod.CelesteMod {
-    public class CelesteModModule : EverestModule {
-        public static CelesteModModule Instance { get; private set; }
+namespace Celeste.Mod.CelesteMod;
+
+public class CelesteModModule : EverestModule {
+    public static CelesteModModule Instance { get; private set; }
 
 #if Settings
         public override Type SettingsType => typeof(CelesteModModuleSettings);
@@ -23,8 +24,8 @@ namespace Celeste.Mod.CelesteMod {
         public static CelesteModModuleSaveData SaveData => (CelesteModModuleSaveData) Instance._SaveData;
 
 #endif
-        public CelesteModModule() {
-            Instance = this;
+    public CelesteModModule() {
+        Instance = this;
 #if Logging
 //-:cnd:noEmit
 #if DEBUG
@@ -36,18 +37,17 @@ namespace Celeste.Mod.CelesteMod {
 #endif
 //+:cnd:noEmit
 #endif
-        }
+    }
 
-        public override void Load() {
+    public override void Load() {
 #if Exports
             typeof(CelesteModExports).ModInterop(); // TODO: delete this line if you do not need to export any functions
 
 #endif
-            // TODO: apply any hooks that should always be active
-        }
+        // TODO: apply any hooks that should always be active
+    }
 
-        public override void Unload() {
+    public override void Unload() {
             // TODO: unapply any hooks applied in Load()
         }
-    }
 }
