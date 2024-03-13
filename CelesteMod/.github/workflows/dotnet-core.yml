@@ -39,10 +39,8 @@ jobs:
         path: |
           everest.yaml
           bin
-#if Samples
           Ahorn/**/*
           Audio/**/*
           Dialog/**/*
           Graphics/**/*
           Loenn/**/*
-#endif
