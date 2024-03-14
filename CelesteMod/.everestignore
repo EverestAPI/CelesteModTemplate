@@ -1,2 +1,7 @@
-# Make Everest ignore the Source folder
+# Files within this mod that should not be loaded by Everest.
+# If you want to add files to this list that will be included in the zip,
+# make sure to also include the .everestignore file in the zip by adding it
+# to the ZippedFiles tag in the .csproj file, or the artifact paths in the
+# Github workflow file if you're using GitHub actions for publishing.
 Source/
+CelesteMod.zip
