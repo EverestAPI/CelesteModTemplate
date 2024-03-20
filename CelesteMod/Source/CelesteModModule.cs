@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
 #if Exports
 using MonoMod.ModInterop;
 #endif
