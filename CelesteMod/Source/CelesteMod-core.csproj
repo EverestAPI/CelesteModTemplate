@@ -60,6 +60,7 @@
             <Code Type="Fragment" Language="cs">
             <![CDATA[
                 var projectDir = Path.Combine(@"$(ProjectDir)", ".."); // Go one level up, since we're inside the 'Source' directory
+                projectDir = Uri.UnescapeDataString(projectDir);
             
                 if (File.Exists(OutputPath))
                     File.Delete(OutputPath);
@@ -90,7 +91,7 @@
                 
                     if (toUri.Scheme.Equals("file", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        relativePath = relativePath.Replace(Path.AltDirectorySeparatorChar, Path.DirectorySeparatorChar);
+                        relativePath = relativePath.Replace(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
                     }
                 
                     return relativePath;
