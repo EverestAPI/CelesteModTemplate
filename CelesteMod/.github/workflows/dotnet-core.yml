@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build CelesteMod.csproj --configuration Release --no-restore
+      run: dotnet build Source/CelesteMod.csproj --configuration Release --no-restore
       env:
         CelestePrefix: ${{ github.workspace }}/lib-stripped
 
