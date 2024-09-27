@@ -13,7 +13,7 @@ Prerequisites:
 Installation:
 
 ```shell
-dotnet new --install CelesteMod.Templates
+dotnet new install CelesteMod.Templates
 ````
 
 From your Celeste/Mods directory:
