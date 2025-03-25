@@ -19,4 +19,4 @@ jobs:
       - name: Build
         run: dotnet pack CelesteMod.Templates.csproj --configuration Release -p:version=${{env.CURRENT_TAG}} --no-restore
       - name: Publish
-        run: dotnet nuget push bin/Release/CelesteMod.Templates.${{env.CURRENT_TAG}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+        run: dotnet nuget push bin/Release/CelesteMod.Templates.${{env.CURRENT_TAG}}.nupkg --source 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}}
