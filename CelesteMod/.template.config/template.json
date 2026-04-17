@@ -42,6 +42,11 @@
       "datatype": "bool",
       "defaultValue": "true"
     },
+    "GlobalUsings": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
     "GitHub": {
       "type": "parameter",
       "datatype": "bool",
@@ -108,6 +113,12 @@
           "condition": "(!SaveData)",
           "exclude": [
             "Source/CelesteModModuleSaveData.cs"
+          ]
+        },
+        {
+          "condition": "(!GlobalUsings)",
+          "exclude": [
+            "Source/GlobalUsings.cs"
           ]
         },
         {
