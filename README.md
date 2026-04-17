@@ -33,6 +33,7 @@ Available parameters:
 * `--Session` : Includes a blank `EverestModuleSession` class and configures the module to look for it. (Defaults to true)
 * `--SaveData` : Includes a blank `EverestModuleSaveData` class and configures the module to look for it. (Defaults to true)
 * `--Logging` : Sets logging level to `Info` specifically for release builds instead of the default `Verbose`. (Defaults to true)
+* `--GlobalUsings` : Includes a `GlobalUsings.cs` with a set of common usings. (Defaults to true)
 * `--GitHub` : Generates a GitHub action for building your mod. (Defaults to false)
 * `--Legacy` : Generates a mod for use with legacy Everest. This is only required if you want people to use your mod on versions of Everest older than 4465. (Defaults to false)
 
