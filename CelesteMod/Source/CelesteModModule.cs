@@ -29,10 +29,10 @@ public class CelesteModModule : EverestModule {
 //-:cnd:noEmit
 #if DEBUG
         // debug builds use verbose logging
-        Logger.SetLogLevel(nameof(CelesteModModule), LogLevel.Verbose);
+        Logger.SetLogLevel(nameof(CelesteMod), LogLevel.Verbose);
 #else
         // release builds use info logging to reduce spam in log files
-        Logger.SetLogLevel(nameof(CelesteModModule), LogLevel.Info);
+        Logger.SetLogLevel(nameof(CelesteMod), LogLevel.Info);
 #endif
 //+:cnd:noEmit
 #endif
